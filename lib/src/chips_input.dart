@@ -84,8 +84,7 @@ class ChipsInput<T> extends StatefulWidget {
   ChipsInputState<T> createState() => ChipsInputState<T>();
 }
 
-class ChipsInputState<T> extends State<ChipsInput<T>>
-    implements TextInputClient {
+class ChipsInputState<T> extends State<ChipsInput<T>> with TextInputClient {
   Set<T> _chips = <T>{};
   List<T?>? _suggestions;
   final StreamController<List<T?>?> _suggestionsStreamController =
@@ -483,13 +482,4 @@ class ChipsInputState<T> extends State<ChipsInput<T>>
       ),
     );
   }
-
-  @override
-  void showToolbar() {}
-
-  @override
-  void insertTextPlaceholder(Size size) {}
-
-  @override
-  void removeTextPlaceholder() {}
 }
